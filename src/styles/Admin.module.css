@@ -1,0 +1,92 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+/* INPUT SEARCH */
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.elimnar {
+  background: #ef4444;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+/* CARD */
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 1rem;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.15);
+}
+
+/* HEADER */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.cardHeader h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* BADGE */
+.badge {
+  background: #2563eb;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* TEXT */
+.card p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #333;
+}
+
+/* LINKS */
+.links {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.links a {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}

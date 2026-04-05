@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  min-height: 80vh;
+  width: 80%;
+  margin: 2rem auto;
+  background: #f8fafc;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ===================== */
+/* RIGHT PANEL           */
+/* ===================== */
+
+.right {
+  flex: 1.2;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* TITULO */
+.title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #111;
+}
+
+/* BOTONES MENU */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.button {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 14px;
+  border-radius: 10px;
+  color: #323232;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.button:hover {
+  border-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
+}
+
+/* BACK BUTTON */
+.back {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 1.5rem auto;
+  transition: 0.3s;
+  max-width: 50%;
+}
+
+.back:hover {
+  background: #1e4fd6;
+  transform: translateX(-2px);
+}
+
+/* CONTENIDO VISTAS */
+.content {
+  animation: fadeIn 0.4s ease;
+}
+
+/* LOADER WRAPPER */
+.loaderBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout {
+  position: relative;
+  top: 50%;
+  right: 10px;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logout:hover {
+  background: #d9363e;
+}
+/* ANIMACIONES GENERALES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

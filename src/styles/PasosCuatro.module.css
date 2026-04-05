@@ -1,0 +1,163 @@
+/* GRID GENERAL */
+.containerGrid {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  animation: fadeIn 0.6s ease;
+}
+
+/* COLUMNAS */
+.colIzquierda {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.colDerecha {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* CARDS GENERALES */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.header button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* INPUT */
+.inputRef {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 0.5rem 0;
+}
+
+/* BOTON */
+.botonValidar {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* MENSAJES */
+.error {
+  color: #dc3545;
+  font-size: 13px;
+}
+
+.ok {
+  color: #28a745;
+  font-size: 13px;
+}
+
+/* RESUMEN (derecha) */
+.cardResumen {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* PRECIO GRANDE */
+.precio {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* TOTAL */
+.total {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .containerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.textServicio {
+  margin: 1rem;
+}
+
+/* CONTENEDOR FINAL */
+.confirmacionBox {
+  margin-top: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* TERMINOS */
+.terminos {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* 👈 mueve todo hacia la derecha */
+  gap: 8px; /* espacio entre checkbox y texto */
+}
+
+.terminos label {
+  white-space: nowrap; /* 👈 evita salto de línea */
+  font-size: 14px;
+}
+
+/* BOTON FINAL */
+.botonConfirmar {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background: #28a745;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.botonConfirmar:hover {
+  background: #218838;
+}
+
+/* DISABLED */
+.botonConfirmar:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.leyenda {
+  font-size: 12px;
+  color: #666;
+}

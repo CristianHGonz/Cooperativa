@@ -1,0 +1,276 @@
+.tituloFacturas {
+  text-align: center;
+  margin: 1rem 0;
+  animation: fadeUpSoft 0.6s ease forwards;
+}
+
+.encontrarFactura {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text {
+  text-align: center;
+  font-size: 18px;
+  margin: 2rem;
+  padding: 1rem;
+  animation: fadeUpSoft 0.8s ease forwards;
+}
+
+.ejFactura {
+  width: 800px;
+  max-width: 100%;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: aparecerImg 0.8s ease forwards;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.3s ease;
+
+  animation-delay: 0.3s;
+}
+
+.ejFacturaWrapper {
+  display: inline-block;
+  overflow: hidden; /* 🔥 clave para zoom limpio */
+  border-radius: 16px;
+}
+.ejFacturaWrapper:hover .ejFactura {
+  transform: scale(1.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.divInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: fadeUpSoft 1s ease forwards;
+}
+
+.input {
+  margin: 1rem;
+  padding: 0.7rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+.input:hover {
+  border-color: #999;
+}
+
+.input:focus {
+  border-color: #2c7be5;
+  box-shadow: 0 0 12px rgba(44, 123, 229, 0.3);
+  transform: scale(1.03);
+}
+
+.boton {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2c7be5, #1a5edb);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(44, 123, 229, 0.4);
+}
+
+.boton:active {
+  transform: scale(0.95);
+}
+.formasPago {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.bloque {
+  width: 400px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpSoft 0.6s ease forwards;
+  transition: all 0.3s ease;
+}
+
+.bloque:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.bloque:nth-child(2) {
+  animation-delay: 0.35s;
+}
+.bloque:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.bloque:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+@keyframes fadeUpSoft {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.pagoTitulo {
+  text-align: center;
+  margin: 0.5rem;
+  position: relative;
+}
+.pagoTitulo::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #2c7be5;
+  margin: 5px auto 0;
+  transition: width 0.3s ease;
+}
+.bloque:hover .pagoTitulo::after {
+  width: 40%;
+}
+@keyframes aparecerImg {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ejFactura:hover {
+  transform: scale(1.13); /* ahora sí funciona */
+}
+
+@media (max-width: 1400px) {
+  .ejFactura {
+    width: 600px;
+  }
+
+  .bloque {
+    width: 350px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .text {
+    font-size: 16px;
+    margin: 1.5rem;
+  }
+
+  .ejFactura {
+    width: 500px;
+  }
+
+  .bloque {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .encontrarFactura {
+    padding: 1rem;
+  }
+
+  .text {
+    font-size: 15px;
+    margin: 1rem;
+  }
+
+  .ejFactura {
+    width: 100%;
+  }
+
+  .divInput {
+    width: 100%;
+  }
+
+  .input {
+    width: 80%;
+  }
+
+  .boton {
+    width: 60%;
+  }
+
+  .formasPago {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bloque {
+    width: 90%;
+  }
+  @media (max-width: 768px) {
+    .ejFactura {
+      animation: aparecerImgMobile 0.6s ease forwards;
+    }
+  }
+
+  @keyframes aparecerImgMobile {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .tituloFacturas {
+    font-size: 1.5rem;
+  }
+
+  .text {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+
+  .input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .boton {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .bloque {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .pagoTitulo {
+    font-size: 1rem;
+  }
+}

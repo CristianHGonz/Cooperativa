@@ -1,0 +1,267 @@
+.sectionFull {
+  width: 100%;
+  padding: 80px 20px;
+  animation: fadeInSection 0.8s ease both;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sectionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* TITULOS */
+.tituloServicios {
+  font-size: 34px;
+  font-weight: 800;
+  text-align: center;
+  margin: 20px;
+  animation: fadeInTitle 0.8s ease both;
+}
+
+.subTituloServicios {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px;
+  animation: fadeInTitle 1s ease both;
+}
+
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TEXTO */
+.frase {
+  max-width: 1200px;
+  margin: 2px auto;
+  text-align: justify;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  animation: fadeInText 1s ease both;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* GRID */
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  /* margin-top: 10px; */
+}
+
+/* CARD BASE */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 22px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #eee;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardEnter 0.6s ease forwards;
+}
+
+/* entrada escalonada */
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes cardEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* hover animado */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* BORDES TOP ANIMADOS */
+.ftth::before,
+.wss::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  animation: slideBar 1s ease;
+}
+
+.ftth::before {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+}
+
+.wss::before {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+}
+
+@keyframes slideBar {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* TITULO CARD */
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  /* margin-bottom: 10px; */
+  color: #222;
+}
+
+/* PRECIO */
+.price {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 10px 0 0;
+  animation: popPrice 0.8s ease;
+}
+
+@keyframes popPrice {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.month {
+  font-size: 13px;
+  color: #777;
+}
+
+/* FEATURES */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.features li {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #444;
+  transition: 0.2s;
+}
+
+.features li:hover {
+  transform: translateX(5px);
+  color: #000;
+}
+
+/* BOTÓN */
+.btn {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+/* brillo animado */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+}
+
+.btn:hover::after {
+  animation: shine 0.7s ease;
+}
+
+@keyframes shine {
+  100% {
+    left: 100%;
+  }
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* LOADER */
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  animation: fadeInText 0.6s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tituloServicios {
+    font-size: 26px;
+  }
+
+  .subTituloServicios {
+    font-size: 20px;
+  }
+
+  .cardsContainer {
+    grid-template-columns: 1fr;
+  }
+}

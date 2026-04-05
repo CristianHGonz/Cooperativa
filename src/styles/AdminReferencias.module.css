@@ -1,0 +1,134 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+/* TITULO */
+h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1;
+  min-width: 150px;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+
+  outline: none;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* BOTONES GENERALES */
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+
+  background: #2563eb;
+  color: white;
+
+  font-weight: 600;
+  font-size: 13px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1e4fd6;
+}
+
+/* LISTA */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* CARD ITEM */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 12px 14px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* INFO */
+.info {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* BOTONES ACCIONES */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.deleteBtn {
+  background: #ef4444;
+}
+
+.deleteBtn:hover {
+  background: #dc2626;
+}
+
+.editBtn {
+  background: #f59e0b;
+}
+
+.editBtn:hover {
+  background: #d97706;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  input {
+    min-width: 100%;
+  }
+}

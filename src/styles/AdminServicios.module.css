@@ -1,0 +1,77 @@
+/* GRID */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* FILAS */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.row span {
+  font-size: 13px;
+  color: #666;
+}
+
+.row strong {
+  font-size: 14px;
+  color: #111;
+}
+
+/* ACCIONES */
+.actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* INPUT */
+input {
+  width: 120px;
+}
+
+/* 💻 DESKTOP: tipo tabla */
+@media (min-width: 768px) {
+  .grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .card {
+    display: table-row;
+    box-shadow: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .row {
+    display: table-cell;
+    padding: 12px;
+  }
+
+  .row span {
+    display: none;
+  }
+
+  .actions {
+    display: table-cell;
+    text-align: right;
+  }
+}
