@@ -13,7 +13,8 @@ import {
 } from "firebase/firestore";
 
 import { app } from "./config";
-const API_URL = import.meta.env.VITE_API_URL;
+
+import { API_URL } from "./config/api";
 const db = getFirestore(app);
 
 
@@ -26,6 +27,13 @@ const db = getFirestore(app);
 //         id: doc.id,
 //         ...doc.data(),
 //     }));
+// };
+// export const obtenerPlanes = async (tipo) => {
+//     const res = await fetch(`${API_URL}/api/planes/categoria/${tipo}`);
+
+//     if (!res.ok) throw new Error("Error cargando planes");
+
+//     return await res.json();
 // };
 export const obtenerPlanes = async (tipo) => {
     const res = await fetch(`${API_URL}/api/planes/categoria/${tipo}`);
