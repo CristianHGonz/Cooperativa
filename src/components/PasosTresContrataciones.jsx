@@ -1,4 +1,4 @@
-import styles from "../styles/pasosTres.module.css";
+import styles from "../styles/PasosTres.module.css";
 import { useState } from "react";
 import { useContext } from "react";
 import { Context } from "../context/Context";

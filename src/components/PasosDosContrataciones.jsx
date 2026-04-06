@@ -1,4 +1,4 @@
-import Styles from "../styles/pasosDos.module.css";
+import Styles from "../styles/PasosDos.module.css";
 import { useContext } from "react";
 import { Context } from "../context/Context";
 

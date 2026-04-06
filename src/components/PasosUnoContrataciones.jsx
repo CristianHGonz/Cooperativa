@@ -1,7 +1,7 @@
 import { Context } from "../context/Context";
 import { obtenerPlanes } from "../firebase/db";
 import { useState, useEffect, useContext } from "react";
-import Styles from "../styles/pasosUno.module.css";
+import Styles from "../styles/PasosUno.module.css";
 import { Loaders } from "../components/Loaders";
 
 export const PasoUnoContrataciones = () => {

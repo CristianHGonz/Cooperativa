@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { Context } from "../context/Context";
 import { obtenerReferencias } from "../firebase/db";
-import styles from "../styles/pasosCuatro.module.css";
+import styles from "../styles/PasosCuatro.module.css";
 import { guardarContratacion } from "../firebase/db";
 import { subirArchivo } from "../firebase/storage";
 import emailjs from "@emailjs/browser";
