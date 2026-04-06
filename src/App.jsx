@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import styles from "./styles/layout.module.css";
+import styles from "./styles/Layout.module.css";
 import { NavBar } from "./components/NavBar";
 import { SocialBar } from "./components/SocialBar";
 import { Home } from "./components/Home";
