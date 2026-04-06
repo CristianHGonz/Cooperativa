@@ -1,10 +1,9 @@
+import styles from "../styles/Admin.module.css";
 import { useEffect, useState } from "react";
 import {
   obtenerContrataciones,
   eliminarContratacionCompleta,
 } from "../firebase/db";
-
-import styles from "../styles/admin.module.css";
 
 export const AdminContrataciones = () => {
   const [data, setData] = useState([]);
