@@ -16,7 +16,7 @@ import { app } from "./config";
 const API_URL = import.meta.env.VITE_API_URL;
 const db = getFirestore(app);
 
-// 🔥 PLANES
+
 // export const obtenerPlanes = async (tipo) => {
 //     const q = query(collection(db, "planes"), where("Categoria", "==", tipo));
 

@@ -1,29 +1,29 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 
 import planesRoutes from "./routes/planes.js";
-import contratacionesRoutes from "./routes/contrataciones.js";
 import referenciasRoutes from "./routes/referencias.js";
+import contratacionesRoutes from "./routes/contrataciones.js";
 
-dotenv.config();
-
-// ✅ PRIMERO crear app
 const app = express();
 
-// ✅ MIDDLEWARES
+// 🔥 middlewares
 app.use(cors());
 app.use(express.json());
 
-// ✅ DESPUÉS las rutas
+// 🔥 rutas
 app.use("/api/planes", planesRoutes);
-app.use("/api/contrataciones", contratacionesRoutes);
 app.use("/api/referencias", referenciasRoutes);
+app.use("/api/contrataciones", contratacionesRoutes);
 
-// ✅ PUERTO
-const PORT = 3000;
+// 🔥 test
+app.get("/", (req, res) => {
+    res.send("API funcionando 🚀");
+});
 
-// ✅ LEVANTAR SERVER
+// 🔥 puerto
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en puerto ${PORT}`);
+    console.log("Servidor corriendo en puerto " + PORT);
 });
