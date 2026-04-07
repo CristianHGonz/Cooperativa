@@ -5,6 +5,9 @@
   font-family: "Inter", sans-serif;
   color: #323232;
 }
+body {
+  line-height: 1.6;
+}
 .layout {
   min-height: 100vh; /* 🔥 ocupa toda la pantalla */
   display: flex;
@@ -19,9 +22,20 @@
 .main {
   flex: 1; /* 🔥 empuja el footer abajo */
   width: 100%;
-  max-width: 80%;
-  margin: 0.5rem auto;
+  max-width: 1200px;
+  margin: 1.5rem auto;
   transition: transform 0.4s ease;
+  margin-top: 70px; /* ajustalo a la altura real del navbar */
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* SOLO MOBILE */
@@ -31,7 +45,7 @@
   }
 }
 html {
-  background-color: #f0f0f0;
+  background: #f5f7fa;
 }
 
 .footer {

@@ -2,8 +2,19 @@ import styles from "../styles/NavBar.module.css";
 import logo from "../assets/images/LogoEmpresa/Logotipo-Villa-Giardino-Horiz.png";
 import menu from "../assets/images/icons/menu.jpg";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export const NavBarConteiner = ({ menuAbierto, toggleMenu, cerrarMenu }) => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 120);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <header className={styles.header}>
       <div className={styles.divHeader}>
@@ -14,13 +25,19 @@ export const NavBarConteiner = ({ menuAbierto, toggleMenu, cerrarMenu }) => {
         </div>
 
         <div className={styles.contratar}>
-          <button className={styles.btnContratar}>
-            <Link to="/contratar-servicio">CONTRATAR SERVICIO</Link>
-          </button>
+          <Link
+            to="/contratar-servicio"
+            className={`${styles.btnContratar} ${
+              scrolled ? styles.btnScrolled : ""
+            }`}
+          >
+            Contratar servicio
+          </Link>
         </div>
       </div>
+      {scrolled && <div style={{ height: "48px" }}></div>}
 
-      <nav className={styles.navBar}>
+      <nav className={`${styles.navBar} ${scrolled ? styles.scrolled : ""}`}>
         <div className={styles.hamburguesa} onClick={toggleMenu}>
           <img src={menu} alt="" />
         </div>

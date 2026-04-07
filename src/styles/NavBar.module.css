@@ -2,6 +2,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
+  gap: 0.2rem; /* 🔥 separa apenas header y nav */
 }
 .divHeader {
   width: 100%;
@@ -9,9 +10,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.2rem 0;
 }
 .divLogo {
-  padding: 0.5rem;
+  padding: 0.2rem 0.5rem; /* 🔥 menos alto */
+
   width: 200px;
   flex-shrink: 0;
 }
@@ -20,28 +23,74 @@
   cursor: pointer;
 }
 .contratar {
-  margin: 0.2rem 1rem;
+  margin: 0 1rem; /* 🔥 sacamos margen vertical */
 }
 .btnContratar {
+  background: linear-gradient(135deg, #ff7a18, #ff5722);
+  color: white;
   border: none;
-  background-color: green;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  color: #f4f4f4;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.btnScrolled {
+  background: linear-gradient(135deg, #00c853, #00e676);
+}
+.btnContratar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 87, 34, 0.4);
 }
 .navBar {
-  background-color: #2c7be5;
+  /* background: linear-gradient(135deg, #1e3c72, #2a5298); */
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0 0 1rem 1rem;
   height: 3rem;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 3rem;
 
+  z-index: 1000;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  background: rgba(37, 99, 235, 0.9);
   animation: slideDown 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 0.35s ease;
+}
+.scrolled {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 95%; /* 🔥 más ancho */
+  max-width: 1200px; /* 🔥 acompaña tu layout */
+
+  z-index: 1000;
+
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+
+  padding: 0.25rem 0;
+  backdrop-filter: blur(10px);
+  background: rgba(30, 60, 114, 0.9);
+}
+.scrolled .ulNavBar {
+  font-size: 13px;
 }
 .ulNavBar {
   display: flex;
@@ -70,6 +119,10 @@ a {
   color: #f0f0f0;
   position: relative;
   transition: all 0.7s ease;
+  opacity: 0.9;
+}
+.liNavBar a:hover {
+  opacity: 1;
 }
 .hamburguesa {
   display: none;
@@ -150,6 +203,17 @@ a {
   }
 }
 @media (max-width: 768px) {
+  .divHeader {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .divLogo {
+    width: 160px;
+  }
+  .contratar {
+    margin: 0;
+  }
   .navBar {
     border-radius: 0;
   }
@@ -171,9 +235,17 @@ a {
     display: none;
     text-align: end;
     font-size: 12px;
+    border-radius: 0 0 10px 10px;
   }
 
   .menuActivo {
     display: flex;
+  }
+  .btnContratar {
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 13px;
   }
 }
