@@ -7,23 +7,24 @@ import referenciasRoutes from "./routes/referencias.js";
 import contratacionesRoutes from "./routes/contrataciones.js";
 
 const app = express();
-// 🔥 middlewares
+
+// 🔥 Middlewares
 app.use(cors());
 app.use(express.json());
 
-// 🔥 rutas
+// 🔥 Rutas
 app.use("/api/planes", planesRoutes);
 app.use("/api/referencias", referenciasRoutes);
 app.use("/api/contrataciones", contratacionesRoutes);
 
-// 🔥 test
+// 🔥 Ruta de test
 app.get("/", (req, res) => {
     res.send("API funcionando 🚀");
 });
 
-// 🔥 puerto
+// 🔥 Puerto (obligatorio para Render)
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log("Servidor corriendo en puerto " + PORT);
+    console.log(`Servidor corriendo en puerto ${PORT}`);
 });

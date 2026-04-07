@@ -12,6 +12,7 @@
 // export const db = admin.firestore();
 import admin from "firebase-admin";
 
+// Inicialización de Firebase usando variables de entorno
 const serviceAccount = {
     projectId: process.env.FIREBASE_PROJECT_ID,
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
